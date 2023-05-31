@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+.container{
+background:transparent;
+border-bottom:2px solid #343434;
+text-align: center;
+justify-content: space-between;
+margin-top:3%;
+display: flex;
+height:30%;
+border-radius:10px;
+}
+.container-image{
+    align-items: center;
+    right:10px;
+}
+.container-image img{
+    width:75px;
+    height:75px;
+    color: #eb2bd2;
+    cursor:pointer;
+    border-radius:50px;
+}
+.container-image img:hover{
+    background: #343434;
+transform:rotate(360deg);
+transition:0.8s ease-in-out;
+}
+.container h2{
+    color: #cd26c4;
+    font-weight: bold;
+    margin-left:3%;
+}
+.amount{
+gap:4rem;
+width: 100%;
+margin-top:5%;;
+height: 50%;
+display: flex;
+}
+
+button{
+    border-radius:10px;
+    height:60px;
+    font-size: 20px;
+    padding: 14px;
+  background: #bd38a9;
+  color:white;
+}
+input{
+    width: 200px;
+    border-radius: 10px;
+    height: 58px;
+    text-align:center;
+}
+select{
+    padding:10px;
+    border-radius:10px;
+    height:60px;
+}
+button:hover {
+    cursor: pointer; 
+    font-size: 20px;
+    transition:1.8s ease-out;
+    color: #eb2bd2;
+    background-color: rgb(232, 232, 237);
+}
+#get{
+    margin-left:50%;
+    margin-right:50%;
+    margin-top:100px;
+    color: #bd38a9;
+}
+        </style>
+    </head>
+    <body style="background-image: url(./Maniraguha/download\ money.jpg)";>
+        <div class="container">
+            
+            <h2>money exchange</h2>
+            <div class="container-image" id="close">
+            <img src="f0034944.png">
+        </div>
+        </div>
+        <div class="amount">
+                <p style="color: rgb(210, 41, 193); font-weight: bold;"> Amount:</p>
+                <input type="text" id="gain">
+                <p style="color: rgb(224, 81, 193); font-weight: bold;">From:</p>
+                <select id="house">
+                    <option>USD-$</option>
+                    <option>Euro</option>
+                    
+                </select>
+                <p style="margin-left: 3%; color: rgb(218, 45, 186); font-weight: bold;">To</p>
+                <select id="for">
+                    <option>Rwanda-RWF</option>
+                    <option>Naira</option>
+                    <option>Yuan</option>
+                    <option>USD-$</option>
+                    <option>Euro</option>
+                </select>
+                <button   onclick="Convert()">Convert</button>
+        </div>
+        <h2 id="get">=</h2>
+        <script>
+            function Convert(){
+            var go=document.getElementById("gain").value;
+            var select1=document.getElementById("house").value;
+            var select2=document.getElementById("for").value;
+            let rwf;
+            if(select1=='USD-$'&&select2=='Rwanda-RWF'){
+             rwf=go*1000;
+            }
+            else if(select1=='USD-$'&&select2=='Naira'){
+                rwf=go*470;
+            }
+            else if(select1=='USD-$'&&select2=='Yuan'){
+                rwf=go*380;
+            }
+            else if(select1=='USD-$'&&select2=='USD-$'){
+                rwf=go*1;
+            }
+            else if(select1=='USD-$'&&select2=='Euro'){
+                rwf=go*0.93;
+            }
+            else if(select1=='Euro'&&select2=='Naira'){
+                rwf=go*340;
+            }
+            else if(select1=='Euro'&&select2=='USD-$'){
+                rwf=go*1.07;
+            }
+            else if(select1=='Euro'&&select2=='Euro'){
+                rwf=go*1;
+            }
+            else if(select1=='Euro'&&select2=='Rwanda-RWF'){
+                rwf=go*1100;
+            }
+            else if(select1=='Euro'&&select2=='yuan'){
+                rwf=go*7.56;
+            }
+            else if(go==''){
+                alert("you can't get solution with empty input")
+            }
+            else{
+                rwf="nta go byakunda";
+            }
+            document.getElementById("get").innerHTML=rwf;
+        }
+        function close(){
+            window.location.href="presentation.html";
+        }
+        </script>
+    </body>
+</html>
